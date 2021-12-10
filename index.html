@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Table Ready</title>
 </head>
 <body>
-    
+    <!-- header -->
+    <div class = "container">
+        <div class = "row" > 
+            <h1 class = "col s12 center-align">Dinner for you</h1>  
+        
+        <button class="saveBtn col s12 btn center-align" >
+        <span>Generate Random Recipe</span>
+        </button>
+        </div>
+        <div class="row">
+            <div class="col s7 push-s6 ">
+                <div class="col s5 pull-s6"><span class="flow-text">Recipe</span>
+                
+            
+            </div>
+            <div class="col s5 pull-s6"><span class="flow-text">Ingredients</span>
+                </div>
+               
+    </div>
+    <div class="row">
+        <form id="user-form" class="align-center">
+            <label for="phone" class="form-label"></label>
+            <input type="email" autofocus="true" id="phone-input" class="form-input" placeholder="Email"/>
+            <button type="submit" class="btn">Email me the recipe</button>
+        </form>
+    </div>  
+                
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
