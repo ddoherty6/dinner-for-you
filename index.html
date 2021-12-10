@@ -13,29 +13,34 @@
     <div class = "container">
         <div class = "row"  > 
             <h1 class = "col s12 center-align">Dinner for you</h1>  
-        
-        <button class="btn center-align" id="generate-recipe">
-        <span>Generate Random Recipe</span>
-        </button>
+            <div class="col s10 offset-s1 center-align">
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                    Generate Random Recipe
+                </button>
+            </div>
         </div>
         <div class="row">
-            <div class="col s7 push-s6" id="recipe-container">
+            <div class="col s6 push-s6" id="recipe-container">
                 <div class="col s5 pull-s6">
                 <span class="flow-text">Recipe</span>
                 
             
             </div>
-            <div class="col s5 pull-s6" id="ingredients-container">
+            <div class="col s6 pull-s6" id="ingredients-container">
                 <span class="flow-text">Ingredients</span>
             </div>
                
     </div>
     <div class="row">
-        <form id="user-email" class="align-center">
-            <label for="email" class="form-label"></label>
-            <input type="email" autofocus="true" id="email-input"  placeholder="Email"/>
-            <button type="submit" class="btn">Email me the recipe</button>
-        </form>
+        <div class="col s10 offset-s1 center-align">
+
+            <div class="input-field inline">
+                <input id="email_inline" type="email" class="validate">
+                <label for="email_inline">Email</label>
+                <span class="helper-text" data-error="wrong" data-success="right"></span>
+                <button type="submit" class="btn">Email me the recipe</button>
+              </div>
+        </div>
     </div>  
                 
 
