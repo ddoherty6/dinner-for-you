@@ -6,9 +6,11 @@
 				success: function(result){
 		  $("#div1").html(result);
 		  console.log(result);
-
+		  $("#meal").empty();
 		$('#meal').append(result.meals[0].strMeal)
+		$("#category").empty();
 		$('#category').append(result.meals[0].strCategory)
+		$("#area").empty();
 		$('#area').append(result.meals[0].strArea)
 
 
@@ -37,7 +39,7 @@
 
 
 								//Instructions
-								$("#ytube").empty();
+								$("p").empty();
 		$('p').append(result.meals[0].strInstructions);
 		// $('p').append(result.meals[0].strInstructions);
 
@@ -79,7 +81,44 @@
 		// $(document).on('click','#youtubeButton', function () {     
 			
 		// });
-		
+
+					// image
+		$("#image1").empty();
+		const foodImage = result.meals[0].strMealThumb;
+		$('<img id="image" src="" alt="food">').appendTo("#image1");
+		$('#image').attr('src', foodImage);
+
 
 		}});
+
+
+		const settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://smtp-e-mail-sender.p.rapidapi.com/v3/smtpjs.aspx",
+			"method": "POST",
+			"headers": {
+				"content-type": "application/json",
+				"x-rapidapi-host": "smtp-e-mail-sender.p.rapidapi.com",
+				"x-rapidapi-key": "79bc5e5863msh3ef58438b7034ddp1e35ddjsn2401862fc36a"
+			},
+			"processData": false,
+			"data": {
+				"Host": "smtp.yourisp.com",
+				"Username": "username",
+				"Password": "password",
+				"To": "them@website.com",
+				"Bcc": "optional@website.com",
+				"From": "you@isp.com",
+				"Subject": "This is the subject",
+				"Body": "And this is the body",
+				"nocache": "441137",
+				"Action": "Send"
+			}
+		};
+		
+		$.ajax(settings).done(function (resp) {
+			console.log(resp.json);
+		});
+
 	  });
