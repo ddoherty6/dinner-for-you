@@ -79,7 +79,11 @@
 		// $(document).on('click','#youtubeButton', function () {     
 			
 		// });
-		
+
+					// image
+		const foodImage = result.meals[0].strMealThumb;
+		$('<img id="image" src="" alt="food">').appendTo("#image1");
+		$('#image').attr('src', foodImage);
 
 		}});
 	  });
