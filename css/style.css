@@ -1,5 +1,15 @@
+.navbar {
+	height: 80px;
+	
+}
+
+h4{
+	opacity: 80%;
+}
+
 body{
 	width: 100%;
+	font-family:  'PT Sans', sans-serif;;
 }
 #btn{
 	margin-top: 10px;
@@ -12,9 +22,20 @@ ul, li{
 }
 #image{
 	width: 250px;
+	border-radius: 50px;
 }
 #oldRecipeMeal{
 	margin-top: 10px;
 	width: 350px;
 	background-color: rgb(59, 59, 247);
 }
+
+.navbar-brand {
+	font-size: 40px;
+}
+
+.btn{
+	background-color: black;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=PT+Sans&display=swap');
