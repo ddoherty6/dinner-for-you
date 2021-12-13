@@ -1,3 +1,6 @@
+body{
+	width: 100%;
+}
 #btn{
 	margin-top: 10px;
 }
@@ -7,7 +10,11 @@
 ul, li{
 	list-style: none;
 }
-
-h1{
-	font-size: 20px;
+#image{
+	width: 250px;
+}
+#oldRecipeMeal{
+	margin-top: 10px;
+	width: 350px;
+	background-color: rgb(59, 59, 247);
 }
