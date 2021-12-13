@@ -1,4 +1,4 @@
-var sendMail = function(userName, userEmail, recipeObj) {
+var sendMail = function(userName, userEmail) {
 
   var mailInfo = {
     from: {

@@ -11,14 +11,15 @@ $(document).each(function(){
             var value = localStorage.getItem(j,value);
             $(this).val(value);
            arr.push(value);
-		//    console.log(JSON.parse(value));
+		   debugger;
+		   console.log(value);
 		   var info=JSON.parse(value);
 			$('#oildrecipe')
 			.append('<li><a value type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989 oldRecipeMeal" id="oldRecipeMeal">'
 			+ info.mealname +'</a></li>');
     }
     
-}); 
+});
       /// targting old recipe
 $(document).on('click','#oldRecipeMeal', function (e) {     
 	var v = $(this).text();
@@ -126,7 +127,6 @@ function oldRecipeFun(recipeName){
 
 	}});
 }
-
 		// start function recipe
 $("#btn").click(function(){
 
@@ -246,4 +246,5 @@ function localStorageFun(x,val,meal){
 	localStorage.setItem(x,JSON.stringify(mea));
 	$('#oildrecipe').append('<li><a type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="oldRecipeMeal">'+ mealName +'</a></li>')
 	i++;
-}
+} 
+
