@@ -13,146 +13,73 @@
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
   rel="stylesheet"
 />
-<!-- MDB -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
-  rel="stylesheet"
-/>
+<!-- Materialize -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- header -->
-    <div class = "container">
-        <div class = "row"  > 
-            <h1 class = "col s12 center-align">Dinner for you</h1>  
-            <div class="col s10 offset-s1 center-align">
-                <button class=" generateBtn btn waves-effect waves-light" type="submit" name="action">
-                    Generate Random Recipe
-                </button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6 push-s6" id="recipe-container">
-                <div class="col s5 pull-s6">
-                <span class="flow-text">Recipe</span>
-                
-            
-            </div>
-            <div class="col s6 pull-s6" id="ingredients-container">
-                <span class="flow-text">Ingredients</span>
-            </div>
-               
-    </div>
-    <div class="row">
-        <div class="col s10 offset-s1 center-align">
-
-            <div class="input-field inline">
-                <input id="email_inline" type="email" class="validate">
-                <label for="email_inline">Email</label>
-                <span class="helper-text" data-error="wrong" data-success="right"></span>
-                <button type="submit" class="btn">Email me the recipe</button>
-              </div>
-        </div>
-    </div>  
-                
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+<body class ="amber lighten-5">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-info navbar-dark ">
+<nav class=" navbar grey darken-4 center-align ">
 	<!-- Container wrapper -->
-	<div class="container-fluid">
-  
+	<div ">
 	  <!-- Navbar brand -->
-	  <a class="navbar-brand" >welcome</a>
-  
-	 	 
+	  <a class="navbar-brand" >Dinner for You</a>
 	</div>
 	<!-- Container wrapper -->
-  </nav>
+</nav>
   <!-- Navbar -->
+<div class="row">
+	<div class ="col-12 center-align">
+	<button type="button" class="btn pulse darken-4 findbtn" id="btn">Get Recipe</button>
+</div>
 
-
-
-
-	<button type="button" class="btn btn-info btn-rounded " id="btn">recipe</button>
-
-
-
-
-	<div class="container">
-		<div class="row gx-1 ">
-	  
-		  <div class="col-lg-4 col-md-12">
-	  		<h2>Meal </h2>
-			  <h3 id="meal"></h3>
-		  </div>
-	  
-		  <div class="col-lg-4 col-md-6">
-	  		<h2>Category </h2>
-			  <h3 id="category"></h3>
-		  </div>
-	  
-		  <div class="col-lg-4 col-md-6">
-	  		<h2>Area </h2>
-			  <h3 id="area"></h3>
-		  </div>
-	  
-		</div>
-	  </div>
-	  <div class="container">
-		<div class="row ">
-	  
-		  <div class="col-12" id="image1">
-	  
-		  </div>
-	  
-		</div>
-	  </div>
-
-
-
-	<div class="container">
-		<div class="row  ">
-	  
-		  <div class="col-lg-4 col-md-12" id="ing">
-	 		 <h3>Ingredian</h3>
-			  <ul id="in"></ul>
-		  </div>
-
-		  <div class="col-lg-4 col-md-6" id="ins">
-			<h3>Measure</h3>
-			
-			<ul id="me"></ul>
-		</div>
-	  
-		  <div class="col-lg-4 col-md-6" id="mea">
-			<h3>Instructions</h3>
-			<p></p>
-		  </div>
-		 
-		  
-	  
-		</div>
-	</div>
-	<div class="container">
-		<div class="row ">
-	  
-		  <div id="player" class="col-12 ">
-			  <span id="h3"></span>
-			
+<div class="col s3">
+	<div id="image1"></div>
+</div>
+<div class="col s3">
+	<h3>Meal </h3>
+	<h4 id="meal"></h4>
+</div>
 		
-			<span id="ytube"></span>
-		  </div>
-	  
-		</div>
-	  </div>
+<div class="col s3">
+		<h3>Category </h3>
+		<h4 id="category"></h4>
+</div>
+<div class="col s3">
+	<h3>Region</h3>
+	<h4 id="area"></h4>
+</div>
+<div class ="row"></div>
+
+
+<div class="row">
+
+	<div class="col s3">
+		<ul id="oildrecipe"></ul>	
+	</div>	
+	<div class="col s3" id="ing">
+		<h3>Ingredients</h3>
+		<ul id="in"></ul>
+	</div>
+	<div class="col s3" id="ins">
+	<h3>Measure</h3>
+	<ul id="me"></ul>
+	</div>
+
+	<div class="col s3" id="mea">
+		<h3>Instructions</h3>
+		<p></p>
+	</div>
+</div>
+	<div id="player" class="row col-12 center-align ">
+		<span id="h3"></span>
+		<span id="ytube"></span>
+	</div>
 
 	 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="js/jquery-latest.min.js"></script>
 <script src="./js/js.js">
 	
