@@ -11,8 +11,7 @@ $(document).each(function(){
             var value = localStorage.getItem(j,value);
             $(this).val(value);
            arr.push(value);
-		   debugger;
-		   console.log(value);
+		   //console.log(value);
 		   var info=JSON.parse(value);
 			$('#oildrecipe')
 			.append('<li><a value type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989 oldRecipeMeal" id="oldRecipeMeal">'

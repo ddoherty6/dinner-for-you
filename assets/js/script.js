@@ -1,5 +1,17 @@
 var sendMail = function(userName, userEmail) {
 
+  meal = $("#meal").text();
+  catagory = $("#category").text();
+  region = $("#area").text();
+  ingredients = $("#in").html();
+  measurements = $("#me").html();
+  instructions = $("#mea p").text();
+  
+  bodyText = writeMail();
+
+
+
+
   var mailInfo = {
     from: {
         name: "Dinner For You",
@@ -9,9 +21,10 @@ var sendMail = function(userName, userEmail) {
         name: userName,
         address: userEmail,
     },
-    subject: "This is the mail subject",
-    message: "Hello John, how are you ?"
+    subject: meal,
+    message: bodyText
   }
+
   var form= JSON.stringify(mailInfo);
 
   const settings = {
@@ -31,4 +44,45 @@ var sendMail = function(userName, userEmail) {
   $.ajax(settings).done(function (response) {
     console.log(response);
   });
+}
+
+var writeMail = function() { // creates text content of HTML email
+
+  meal = $("#meal").text();
+  category = $("#category").text();
+  region = $("#area").text();
+
+  ingredients = $("#in").children();
+  measurements = $("#me").children();
+  tableRows = Array();
+  ingredientEL = 0;
+  var measureEl = 0;
+  var tableEl = 0;
+
+  for (var i = 0; i < $("#in").children().length || i < $("#in").children().length; i++) {
+
+    tableEl = $("#in").children()[i];
+    
+
+    measureEl = $("#me").children()[i];
+
+
+    tableRows[i] = "<tr><td>" + tableEl.innerText + "</td><td>" + measureEl.innerText + "</td></tr>";
+
+  }
+
+  var headers = "<h1>"+meal+"</h1><h2>"+region+"</h2><h3>"+category+"</h3><h4>Ingredients</h4>";
+
+  var ingredientTable = "<table>"+tableRows.join("")+"</table>";
+  console.log(ingredientTable);
+
+  var instructions = "<h4>Instructions</h4><p>" + $("#mea p").text() + "</p>";
+
+  var footer = "<p>&copy; Dinner For You LLC Infinity</p>"
+
+  var bodyText = headers + ingredientTable + instructions + footer;
+
+  return bodyText;
+
+
 }
