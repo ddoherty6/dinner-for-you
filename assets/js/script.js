@@ -1,16 +1,7 @@
 var sendMail = function(userName, userEmail) {
 
-  meal = $("#meal").text();
-  catagory = $("#category").text();
-  region = $("#area").text();
-  ingredients = $("#in").html();
-  measurements = $("#me").html();
-  instructions = $("#mea p").text();
-  
+  meal = $("#meal").text();  
   bodyText = writeMail();
-
-
-
 
   var mailInfo = {
     from: {
@@ -83,6 +74,21 @@ var writeMail = function() { // creates text content of HTML email
   var bodyText = headers + ingredientTable + instructions + footer;
 
   return bodyText;
-
-
 }
+
+
+$('.modal').click(function() {
+  $("#modal1").show();
+});
+
+// modal was triggered
+$(".modal").on("show.bs.modal", function() {
+  // clear values
+  $(".modal-close .waves-effect .waves-green .btn-flat").val("");
+});
+
+// modal is fully visible
+$(".modal").on("shown.bs.modal", function() {
+  // highlight textarea
+  $(".modal-close .waves-effect .waves-green .btn-flat").trigger("focus");
+}); 
