@@ -114,8 +114,7 @@ function oldRecipeFun(recipeName){
 	.appendTo("#ytube");
 	// modal button
 	$("#email-me").empty();
-	$('<a type="button" href class="btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me!</a>')
-	.attr("href", "#modal1")
+	$('<a href="#modal1" class="btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me this Recipe!</a>')
 	.appendTo("#email-me");
 	
 
@@ -223,8 +222,7 @@ function recipeFun(){
 
 			// modal button
 			$("#email-me").empty();
-			$('<a type="button" href class="waves-effect waves-light btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me!</a>')
-			.attr("href", "#modal1")
+			$('<a type="button" href="#modal1" class="btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me this Recipe!</a>')
 			.appendTo("#email-me");
 	
 
