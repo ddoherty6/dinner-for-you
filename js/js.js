@@ -223,7 +223,7 @@ function recipeFun(){
 
 			// modal button
 			$("#email-me").empty();
-			$('<a type="button" href="#modal1" class="waves-effect waves-light btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me!</a>')
+			$('<a type="button" href class="waves-effect waves-light btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me!</a>')
 			.attr("href", "#modal1")
 			.appendTo("#email-me");
 	

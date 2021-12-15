@@ -76,7 +76,7 @@ var writeMail = function() { // creates text content of HTML email
   return bodyText;
 }
 
-
+/*
 $('.modal').click(function() {
   $("#modal1").show();
 });
@@ -91,4 +91,4 @@ $(".modal").on("show.bs.modal", function() {
 $(".modal").on("shown.bs.modal", function() {
   // highlight textarea
   $(".modal-close .waves-effect .waves-green .btn-flat").trigger("focus");
-}); 
+}); */
