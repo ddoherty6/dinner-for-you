@@ -37,6 +37,10 @@ feature/responsive-web-page
 	font-size: 40px;
 }
 
+p {
+	text-align: justify;
+}
+
 .btn{
 	background-color: #9ccc65;
   }
