@@ -23,12 +23,14 @@ ul, li{
 #image{
 	width: 250px;
 	border-radius: 50px;
+feature/responsive-web-page
 	margin-top: 10px;
 }
 #oldRecipeMeal{
 	margin-top: 10px;
 	width: 350px;
 	background-color: #7986cb;
+
 }
 
 .navbar-brand {
