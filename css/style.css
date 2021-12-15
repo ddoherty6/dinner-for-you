@@ -41,6 +41,10 @@ p {
 	text-align: justify;
 }
 
+#ytube, #email-me {
+	margin: 1%;
+}
+
 .btn{
 	background-color: #9ccc65;
   }
