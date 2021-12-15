@@ -72,16 +72,32 @@
 </div>
 
 <!-- Youtube video, if available -->
-    <div id="player" class="row col l12 m12 s12 center-align ">
-        <span id="h3"></span>
-        <span id="ytube"></span>
-    </div>
+<div id="player" class="row col-12 center-align ">
+	<span id="h3"></span>
+	<div id="ytube"></div>
+	<!-- Modal Trigger -->
+	<div id="email-me"></div>
+</div>
 
-	 
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+	<div class="row">
+		<form class="col s12">
+		  <div class="row">
+			<div class="input-field col s12">
+			  <input id="email" type="email" class="validate">
+			  <label for="email">Email</label>
+			  <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+			</div>
+		  </div>
+		</form>
+	</div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="js/jquery-latest.min.js"></script>
-
-<script src="./js/js.js">
+<script src="./js/js.js"></script>
+<script src="./assets/js/script.js"></script> 
 	
 </script>
 </body>

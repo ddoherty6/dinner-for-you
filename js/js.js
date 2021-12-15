@@ -11,14 +11,14 @@ $(document).each(function(){
             var value = localStorage.getItem(j,value);
             $(this).val(value);
            arr.push(value);
-		//    console.log(JSON.parse(value));
+		   //console.log(value);
 		   var info=JSON.parse(value);
 			$('#oildrecipe')
 			.append('<li><a value type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989 oldRecipeMeal" id="oldRecipeMeal">'
 			+ info.mealname +'</a></li>');
     }
     
-}); 
+});
       /// targting old recipe
 $(document).on('click','#oldRecipeMeal', function (e) {     
 	var v = $(this).text();
@@ -101,20 +101,23 @@ function oldRecipeFun(recipeName){
 	$('#me').append('<li>'+result.meals[0].strMeasure19+'</li>');
 	$('#me').append('<li>'+result.meals[0].strMeasure20+'</li>');
 
-	//youtube 
+	//youtube / modal
 	
 
 	var videoid = result.meals[0].strYoutube;
 	$("#h3").empty();
 	$('<h3>You can watch it on youtube</h3>').appendTo('#h3');
 	$("#ytube").empty();
-
-	$('<a type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="youtubeButton"> Youtube </a>')
+		// youtube button
+	$('<a type="button" href target="_blank" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="youtubeButton"> Youtube </a>')
 	.attr("href", videoid)
 	.appendTo("#ytube");
-	// $(document).on('click','#youtubeButton', function () {     
-		
-	// });
+	// modal button
+	$("#email-me").empty();
+	$('<a type="button" href class="waves-effect waves-light btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me!</a>')
+	.attr("href", "#modal1")
+	.appendTo("#email-me");
+	
 
 				// image
 	$("#image1").empty();
@@ -126,7 +129,6 @@ function oldRecipeFun(recipeName){
 
 	}});
 }
-
 		// start function recipe
 $("#btn").click(function(){
 
@@ -214,12 +216,17 @@ function recipeFun(){
 			$('<h3>You can watch it on youtube</h3>').appendTo('#h3');
 			$("#ytube").empty();
 
+			// youtube button
 			$('<a type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="youtubeButton"> Youtube </a>')
 			.attr("href", videoid)
 			.appendTo("#ytube");
-			// $(document).on('click','#youtubeButton', function () {     
-				
-			// });
+
+			// modal button
+			$("#email-me").empty();
+			$('<a type="button" href class="waves-effect waves-light btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me!</a>')
+			.attr("href", "#modal1")
+			.appendTo("#email-me");
+	
 
 						// image
 			$("#image1").empty();
@@ -246,4 +253,5 @@ function localStorageFun(x,val,meal){
 	localStorage.setItem(x,JSON.stringify(mea));
 	$('#oildrecipe').append('<li><a type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="oldRecipeMeal">'+ mealName +'</a></li>')
 	i++;
-}
+} 
+
