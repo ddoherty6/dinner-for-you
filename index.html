@@ -20,67 +20,64 @@
 </head>
 <body class ="amber lighten-5">
 
-<!-- Navbar -->
-<nav class=" navbar grey darken-4 center-align ">
-	<!-- Container wrapper -->
-	<div ">
-	  <!-- Navbar brand -->
-	  <a class="navbar-brand" >Dinner for You</a>
-	</div>
-	<!-- Container wrapper -->
+<!-- Navbar - The Curtis Edit -->
+
+<nav class=" col s12 navbar blue accent-1 center-align ">
+    <!-- Container wrapper -->
+    <div >
+      <!-- Navbar brand -->
+      <a class="navbar-brand" >Dinner for You</a>
+    </div>
+    <!-- Container wrapper -->
 </nav>
   <!-- Navbar -->
 <div class="row">
-	<div class ="col-12 center-align">
-	<button type="button" class="btn pulse darken-4 findbtn" id="btn">Get Recipe</button>
+    <div class ="col l12 m12 s12 center-align">
+    <button type="button" class="btn pulse darken-4 findbtn" id="btn">Get Recipe</button>
 </div>
-
-<div class="col s3">
-	<div id="image1"></div>
+<div class="col l3 m12 center-align s12">
+    <div id="image1"></div>
 </div>
-<div class="col s3">
-	<h3>Meal </h3>
-	<h4 id="meal"></h4>
+<div class="col l3 m12 s12">
+    <h3>Meal </h3>
+    <h4 id="meal"></h4>
 </div>
-		
-<div class="col s3">
-		<h3>Category </h3>
-		<h4 id="category"></h4>
+<div class="col l3 m12 s12">
+        <h3>Category </h3>
+        <h4 id="category"></h4>
 </div>
-<div class="col s3">
-	<h3>Region</h3>
-	<h4 id="area"></h4>
+<div class="col l3 m12 s12">
+    <h3>Region</h3>
+    <h4 id="area"></h4>
 </div>
 <div class ="row"></div>
-
-
 <div class="row">
-
-	<div class="col s3">
-		<ul id="oildrecipe"></ul>	
-	</div>	
-	<div class="col s3" id="ing">
-		<h3>Ingredients</h3>
-		<ul id="in"></ul>
-	</div>
-	<div class="col s3" id="ins">
-	<h3>Measure</h3>
-	<ul id="me"></ul>
-	</div>
-
-	<div class="col s3" id="mea">
-		<h3>Instructions</h3>
-		<p></p>
-	</div>
+    <div class="col l4 m12 s12" id="ing">
+        <h3>Ingredients</h3>
+        <ul id="in"></ul>
+    </div>
+    <div class="col l4 m12 s12 " id="ins">
+    <h3>Measure</h3>
+    <ul id="me"></ul>
+    </div>
+    <div class="col l4 m12 s12" id="mea">
+        <h3>Instructions</h3>
+        <p></p>
+    </div>
 </div>
+
+<!-- Old Recipes / User History -->
+<div class="col center-align l12 m12 s12">
+    <ul id="oildrecipe"></ul>
+</div>
+
+<!-- Youtube video, if available -->
 <div id="player" class="row col-12 center-align ">
 	<span id="h3"></span>
 	<div id="ytube"></div>
 	<!-- Modal Trigger -->
 	<div id="email-me"></div>
 </div>
-
-
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
@@ -97,9 +94,6 @@
 	</div>
 </div>
 
-
-
-	 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="js/jquery-latest.min.js"></script>
 <script src="./js/js.js"></script>
