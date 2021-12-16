@@ -1,11 +1,12 @@
+var timer = null;
 var sendMail = function(userName, userEmail) { // using EasyMail API
 
   // email is sent successfully
 
-  setInterval(function() { // function is for demo purposes, API is down
+  timer = setInterval(function() { // function is for demo purposes, API is down
     $('#message').text("Email sent successfully!");
     $('#message').addClass("email-sent");
-  }, 2500)
+  }, Math.random()*2500+2000)
   
   console.log(writeMail());
 
@@ -97,7 +98,14 @@ var writeMail = function() { // creates text content of HTML email
 // modal UI triggers
 
 $(document).ready(function() {
-  $('.modal').modal();
+  $('.modal').modal({ // passing object to modal fucntion in materialize
+    onCloseStart: function(modal, trigger) {
+      $('#message').text(""); //clear message for next time
+      $('#message').attr("class", "helper-text");
+      window.clearInterval(timer);
+      console.log("Closed");
+    }
+  });
 });
 
 $("#send").on("click", function() { // pulls name and email from modal, sends the email
@@ -112,13 +120,7 @@ $("#send").on("click", function() { // pulls name and email from modal, sends th
     $('#message').text("Email validated, sending...");
     $('#message').attr("class", "helper-text"); // alert the user we are sending the email
 
-    $("#close").on("click", function() {
-      $('#message').text(""); // reset message text
-      $('#message').attr("class", "helper-text");
-    });
-
     sendMail(name, email); //send the email
-   
 
   } else {
     // email address fails validation:
@@ -126,10 +128,4 @@ $("#send").on("click", function() { // pulls name and email from modal, sends th
     $('#message').addClass("email-fail");
   }
 });
-
-$("#email-me").on("click", function() {
-  $("#name").text("");
-  $('#message').text("");
-  $("#email").text("");
-})
 
