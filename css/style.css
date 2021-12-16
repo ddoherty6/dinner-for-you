@@ -23,7 +23,6 @@ ul, li{
 #image{
 	width: 250px;
 	border-radius: 50px;
-feature/responsive-web-page
 	margin-top: 10px;
 }
 #oldRecipeMeal{
@@ -41,8 +40,21 @@ p {
 	text-align: justify;
 }
 
+.helper-text {
+	margin: 1%;
+}
+
 .btn{
 	background-color: #9ccc65;
+	margin: 1%;
   }
+
+.email-sent {
+	color: green;
+}
+
+.email-fail {
+	color: red;
+}
 
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=PT+Sans&display=swap');
