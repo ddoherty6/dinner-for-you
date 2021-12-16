@@ -2,18 +2,12 @@ var sendMail = function(userName, userEmail) { // using EasyMail API
 
   // email is sent successfully
 
-  setInterval(function() {
+  setInterval(function() { // function is for demo purposes, API is down
     $('#message').text("Email sent successfully!");
     $('#message').addClass("email-sent");
   }, 2500)
-
-  debugger;
-
+  
   console.log(writeMail());
- 
-
-
-
 
   /*
   meal = $("#meal").text();  
@@ -108,15 +102,13 @@ $(document).ready(function() {
 
 $("#send").on("click", function() { // pulls name and email from modal, sends the email
   var name = $("#name").val();
-  console.log(name);
   var email = $("#email").val();
-  console.log(email);
+  
 
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) { // validating email address
-    debugger;
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) { // validating email address using regular expression
+    
     // email address is validated:
-    console.log("Valid");
-
+  
     $('#message').text("Email validated, sending...");
     $('#message').attr("class", "helper-text"); // alert the user we are sending the email
 
@@ -125,19 +117,17 @@ $("#send").on("click", function() { // pulls name and email from modal, sends th
       $('#message').attr("class", "helper-text");
     });
 
-    sendMail(name, email); //send the emaail
-    debugger;
+    sendMail(name, email); //send the email
+   
 
   } else {
     // email address fails validation:
-    console.log("Validation failed");
     $('#message').text("Email is invald. Please enter a valid Email address.");
     $('#message').addClass("email-fail");
   }
 });
 
 $("#email-me").on("click", function() {
-  debugger;
   $("#name").text("");
   $('#message').text("");
   $("#email").text("");
