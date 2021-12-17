@@ -1,4 +1,5 @@
 # Dinner For You #
+This is a group projact.
 
 # Description #
 A simple app in which a user can generate a random recipe to use to cook themselves a hearty meal. 
@@ -6,6 +7,10 @@ Recipes include ingredient list, cooking instructions, occasional youtube videos
 This app also allows the user to email themselves a copy of the recipe and all related information to their email address of choice.
 
 # Languages Used #
+-HTML
+-Javascript
+-JQ
+-CSS
 
 
 # Contributors #
@@ -16,6 +21,9 @@ Eiko Ujifusa - Github profile Link
 
 
 # Screen Capture of the Working App #
+
+
+# Demo #
 
 
 # Link to the GitHub Page #
