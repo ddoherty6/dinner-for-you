@@ -30,6 +30,70 @@ $(document).on('click','#oldRecipeMeal', function (e) {
   
 });
 
+
+
+var sendMail = function(userName, userEmail) {
+	meal = $("#meal").text();
+	catagory = $("#category").text();
+	region = $("#area").text();
+	ingredients = $("#in").html();
+	measurements = $("#me").html();
+	instructions = $("#mea p").text();
+	bodyText = writeMail();
+	var mailInfo = {
+	  from: {
+		  name: "Dinner For You",
+		  address: "recipe@dinnerforyou.com"
+	  },
+	  to: {
+		  name: userName,
+		  address: userEmail,
+	  },
+	  subject: meal,
+	  message: bodyText
+	}
+	var form= JSON.stringify(mailInfo);
+	const settings = {
+	  "async": true,
+	  "crossDomain": true,
+	  "url": "https://easymail.p.rapidapi.com/send",
+	  "method": "POST",
+	  "headers": {
+		  "content-type": "application/json",
+		  "x-rapidapi-host": "easymail.p.rapidapi.com",
+		  "x-rapidapi-key": "79bc5e5863msh3ef58438b7034ddp1e35ddjsn2401862fc36a"
+	  },
+	  "processData": false,
+	  "data":form
+	};
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	});
+}
+var writeMail = function() { // creates text content of HTML email
+	meal = $("#meal").text();
+	category = $("#category").text();
+	region = $("#area").text();
+	ingredients = $("#in").children();
+	measurements = $("#me").children();
+	tableRows = Array();
+	ingredientEL = 0;
+	var measureEl = 0;
+	var tableEl = 0;
+	for (var i = 0; i < $("#in").children().length || i < $("#in").children().length; i++) {
+	  tableEl = $("#in").children()[i];
+	  measureEl = $("#me").children()[i];
+	  tableRows[i] = "<tr><td>" + tableEl.innerText + "</td><td>" + measureEl.innerText + "</td></tr>";
+	}
+	var headers = "<h1>"+meal+"</h1><h2>"+region+"</h2><h3>"+category+"</h3><h4>Ingredients</h4>";
+	var ingredientTable = "<table>"+tableRows.join("")+"</table>";
+	console.log(ingredientTable);
+	var instructions = "<h4>Instructions</h4><p>" + $("#mea p").text() + "</p>";
+	var footer = "<p>&copy; Dinner For You LLC Infinity</p>"
+	var bodyText = headers + ingredientTable + instructions + footer;
+	return bodyText;
+}
+
 function oldRecipeFun(recipeName){
 
 	$.ajax({url: `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`, 
@@ -72,6 +136,17 @@ function oldRecipeFun(recipeName){
 	$('#in').append('<li>  '+result.meals[0].strIngredient19+'</li>');
 	$('#in').append('<li>  '+result.meals[0].strIngredient20+'</li>');
 
+				// Ingredient to string
+				var ing = $("#in li").map(function() {
+					return this.textContent.trim();
+				  }).get();
+				  var ingre=(JSON.stringify(ing, 0, 3))
+				  console.log(ingre);
+				  var ingredient=JSON.parse(ingre);
+				  var ingredIent =ingredient.filter(n => n)
+				  ingredIent=ingredIent.join(", ")
+				  console.log(ingredIent);
+
 
 							//Instructions
 							$("p").empty();
@@ -100,6 +175,22 @@ function oldRecipeFun(recipeName){
 	$('#me').append('<li>'+result.meals[0].strMeasure18+'</li>');
 	$('#me').append('<li>'+result.meals[0].strMeasure19+'</li>');
 	$('#me').append('<li>'+result.meals[0].strMeasure20+'</li>');
+	
+	
+	
+	// Measure to string
+	var meas = $("#me li").map(function() {
+		return this.textContent.trim();
+	  }).get();
+	  var meas1=(JSON.stringify(meas, 0, 3))
+	  console.log(meas1);
+	  var Measure=JSON.parse(meas1);
+	  var strMeasure =Measure.filter(n => n)
+	  strMeasure=strMeasure.join(", ")
+	  console.log(strMeasure);
+
+
+				
 
 	//youtube 
 	
@@ -112,15 +203,48 @@ function oldRecipeFun(recipeName){
 	$('<a type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="youtubeButton"> Youtube </a>')
 	.attr("href", videoid)
 	.appendTo("#ytube");
-	// $(document).on('click','#youtubeButton', function () {     
-		
-	// });
+	
+
+		//email
+
+		$("#h").empty();
+		$('<h3>Email it</h3>').appendTo('#h');
+		$("#email1").empty();
+		$('<input type="email" id="typeEmail" class="form-control" /><label class="form-label" for="typeEmail"></label>').appendTo("#email1");
+		$('<button type="button" class="btn btn-info">send</button>').appendTo("#email1");
+
+
 
 				// image
 	$("#image1").empty();
 	const foodImage = result.meals[0].strMealThumb;
 	$('<img id="image" src="" alt="food">').appendTo("#image1");
 	$('#image').attr('src', foodImage);
+
+
+
+	// send email
+
+
+	var message={
+		Instructions:ins,
+		Ingredient:ingredIent,
+		Measure:strMeasure
+	}
+		$('#send').on('click', function () {
+			$('input[type="email"]').each(function () {
+			var value1 = $(this).val();
+			if (!value1) {
+			///// modal
+					// $('#model').modal().show();
+				
+			} else {	
+				emailFun(value1,mealName,message);	
+			}
+		
+			$('input[type="email"]').val('');
+			});
+		});
 
 	
 
@@ -176,12 +300,29 @@ function recipeFun(){
 			$('#in').append('<li>  '+result.meals[0].strIngredient18+'</li>');
 			$('#in').append('<li>  '+result.meals[0].strIngredient19+'</li>');
 			$('#in').append('<li>  '+result.meals[0].strIngredient20+'</li>');
+			
+			
+					// Ingredient to string
+			var ing = $("#in li").map(function() {
+				return this.textContent.trim();
+			  }).get();
+			  var ingre=(JSON.stringify(ing, 0, 3))
+			  console.log(ingre);
+			  var ingredient=JSON.parse(ingre);
+			  var ingredIent =ingredient.filter(n => n)
+			  ingredIent=ingredIent.join(", ")
+			  console.log(ingredIent);
+			
+
+
+
 
 
 									//Instructions
-									$("p").empty();
+			$("p").empty();
 			$('p').append(result.meals[0].strInstructions);
-			// $('p').append(result.meals[0].strInstructions);
+			var ins=result.meals[0].strInstructions
+		
 
 							//Measure
 			$("#me").empty();
@@ -206,20 +347,41 @@ function recipeFun(){
 			$('#me').append('<li>'+result.meals[0].strMeasure19+'</li>');
 			$('#me').append('<li>'+result.meals[0].strMeasure20+'</li>');
 
-			//youtube 
-			
 
+					// Measure to string
+			var meas = $("#me li").map(function() {
+				return this.textContent.trim();
+			  }).get();
+			  var meas1=(JSON.stringify(meas, 0, 3))
+			  console.log(meas1);
+			  var Measure=JSON.parse(meas1);
+			  var strMeasure =Measure.filter(n => n)
+			  strMeasure=strMeasure.join(", ")
+			  console.log(strMeasure);
+
+
+
+
+
+
+
+			
+			//youtube 
+		
 			var videoid = result.meals[0].strYoutube;
 			$("#h3").empty();
 			$('<h3>You can watch it on youtube</h3>').appendTo('#h3');
 			$("#ytube").empty();
-
 			$('<a type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="youtubeButton"> Youtube </a>')
 			.attr("href", videoid)
 			.appendTo("#ytube");
-			// $(document).on('click','#youtubeButton', function () {     
-				
-			// });
+			
+						//email
+			$("#h").empty();
+			$('<h3>Email it</h3>').appendTo('#h');
+			$("#email1").empty();
+			$('<input type="email" id="typeEmail" class="form-control" /><label class="form-label" for="typeEmail"></label>').appendTo("#email1");
+			$('<button type="button" class="btn btn-info" id="send">send</button>').appendTo("#email1");
 
 						// image
 			$("#image1").empty();
@@ -228,14 +390,46 @@ function recipeFun(){
 			$('#image').attr('src', foodImage);
 
 			var idMeal= result.meals[0].idMeal;
+
+			  		// calling localstorge
 			localStorageFun(i,idMeal,mealName);
 
-	
+			  		// send email
 
 
+					  var message={
+						Instructions:ins,
+						Ingredient:ingredIent,
+						Measure:strMeasure
+					}
+			$('#send').on('click', function () {
+				$('input[type="email"]').each(function () {
+					var value1 = $(this).val();
+					if (!value1) {
+					   ///// modal
+							// $('#model').modal().show();
+					     
+					} else {	
+						emailFun(value1,mealName,message);	
+					}
+				   
+					$('input[type="email"]').val('');
+				});
+			});
 	}});
 	
 }
+
+
+			// targting enter key
+$('input').keyup(function(e){
+    var code = e.which;
+    if(code == 13){                                      
+        e.preventDefault();
+        $('#send').trigger('click');
+    }
+});
+
 
 			//local storge function
 function localStorageFun(x,val,meal){
@@ -247,3 +441,13 @@ function localStorageFun(x,val,meal){
 	$('#oildrecipe').append('<li><a type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="oldRecipeMeal">'+ mealName +'</a></li>')
 	i++;
 }
+		// email function
+		$(document).ready(function($) {
+			
+			 
+			 
+			$('#modal1').modal();
+		  
+			
+		  });
+		//   $('#Modal1').modal('open');
