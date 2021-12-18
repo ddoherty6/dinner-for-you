@@ -1,20 +1,11 @@
-var timer = null;
 var sendMail = function(userName, userEmail) { // using EasyMail API
 
   // email is sent successfully
-
-  timer = setInterval(function() { // function is for demo purposes, API is down
-    $('#message').text("Email sent successfully!");
-    $('#message').addClass("email-sent");
-  }, Math.random()*2500+2000)
   
-  console.log(writeMail());
-
-  /*
   meal = $("#meal").text();  
   bodyText = writeMail();
 
-  var mailInfo = {
+  var mailInfo = { 
     from: {
         name: "Dinner For You",
         address: "recipe@dinnerforyou.com"
@@ -44,24 +35,20 @@ var sendMail = function(userName, userEmail) { // using EasyMail API
   };
 
   $.ajax(settings).done(function (response) {
-    console.log(response);
-    /*if (response.ok) {
+    
+    if (response.success) {
 
       // email is sent successfully
       $('#message').text("Email sent successfully!");
       $('#message').addClass("email-sent");
 
-      $('<span><a id="close" class="modal-close btn">Close</a></span>')
-			.appendTo(".modal-content");
     } else {
       // email send fails
       $('#message').text("Email was unsuccessful :(");
       $('#message').addClass("email-fail");
 
-      $('<span><a id="close" class="modal-close btn">Close</a></span>')
-			.appendTo(".modal-content");
     }
-  }); */
+  }); 
 }
 
 var writeMail = function() { // creates text content of HTML email
@@ -77,7 +64,7 @@ var writeMail = function() { // creates text content of HTML email
   var measureEl = 0;
   var tableEl = 0;
 
-  for (var i = 0; i < $("#in").children().length || i < $("#in").children().length; i++) {
+  for (var i = 0; i < $("#in").children().length || i < $("#in").children().length; i++) { //elements of ingredient table
 
     tableEl = $("#in").children()[i];
     measureEl = $("#me").children()[i];
@@ -99,11 +86,10 @@ var writeMail = function() { // creates text content of HTML email
 
 $(document).ready(function() {
   $('.modal').modal({ // passing object to modal fucntion in materialize
-    onCloseStart: function(modal, trigger) {
+      onCloseStart: function(modal, trigger) {
       $('#message').text(""); //clear message for next time
       $('#message').attr("class", "helper-text");
-      window.clearInterval(timer);
-      console.log("Closed");
+      
     }
   });
 });
