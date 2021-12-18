@@ -14,7 +14,7 @@ $(document).each(function(){
 		   //console.log(value);
 		   var info=JSON.parse(value);
 			$('#oildrecipe')
-			.append('<li><a value type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989 oldRecipeMeal" id="oldRecipeMeal">'
+			.append('<li><a value type="button" href target="_blanck" class=" btn-danger btn-lg" data-mdb-ripple-color="#be8989 oldRecipeMeal" id="oldRecipeMeal">'
 			+ info.mealname +'</a></li>');
     }
     
@@ -106,7 +106,7 @@ function oldRecipeFun(recipeName){
 
 	var videoid = result.meals[0].strYoutube;
 	$("#h3").empty();
-	$('<h3>You can watch it on youtube</h3>').appendTo('#h3');
+	$('<h3>You can watch it and email it</h3>').appendTo('#h3');
 	$("#ytube").empty();
 		// youtube button
 	$('<a type="button" href target="_blank" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="youtubeButton"> Youtube </a>')
@@ -212,7 +212,7 @@ function recipeFun(){
 
 			var videoid = result.meals[0].strYoutube;
 			$("#h3").empty();
-			$('<h3>You can watch it on youtube</h3>').appendTo('#h3');
+			$('<h3>You can watch it and email it</h3>').appendTo('#h3');
 			$("#ytube").empty();
 
 			// youtube button
@@ -249,7 +249,7 @@ function localStorageFun(x,val,meal){
 		mealnumber:val
 	}
 	localStorage.setItem(x,JSON.stringify(mea));
-	$('#oildrecipe').append('<li><a type="button" href target="_blanck" class="btn btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="oldRecipeMeal">'+ mealName +'</a></li>')
+	$('#oildrecipe').append('<li><a type="button" href target="_blanck" class=" btn-danger btn-lg" data-mdb-ripple-color="#be8989" id="oldRecipeMeal">'+ mealName +'</a></li>')
 	i++;
 } 
 
