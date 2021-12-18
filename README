@@ -1,22 +1,48 @@
-# Dinner For You #
+# Dinner For You
 
-# Description #
+
+## Description
 A simple app in which a user can generate a random recipe to use to cook themselves a hearty meal. 
 Recipes include ingredient list, cooking instructions, occasional youtube videos, and a tasty looking photograph of the dish. 
 This app also allows the user to email themselves a copy of the recipe and all related information to their email address of choice.
 
-# Languages Used #
 
-
-# Contributors #
+## Contributors
 Dan Doherty - github profile link
 Sadi Abdurraouf - github profile link
 Curtis Hong - Github profile link
 Eiko Ujifusa - Github profile Link
 
+## Technologies Used
 
-# Screen Capture of the Working App #
+- HTML/CSS
+- JavaScript
+- jQuery
+- Materialize
+- The Meal DB API
+- EasyMail
+
+## Development
+
+Development initially started on an app called Table Ready, which used an API to scan the ID of a customer at a restaurant to get their informaiton and create a profile of them for the restaurant. MVP included functionality to put the customer on a waitlist and send a text to them when their table was ready. The project was scrapped early due to issues with the ID scanning OCR API.
+
+Development shifted to the current MVP, Dinner For You. Using integrated Github kanban board team split tasks into user interface, recipe history, client side storage, and the API calls. Team communicated well to build components separately and then join them to create seamless app.
+
+## Future Development
+
+Additional features -
+
+- "Clear" or "Delete" functionality for recipe history buttons
+- Dynamically generate site headers "Meal", "Category", "Region", "Ingredients", "Measure", "Instructions" to clean up UI when app loads.
+- 
+
+
+# Screen Capture of the Working App
+
+![screenshot](./assets/images/screenshot.jpg)
 
 
 # Link to the GitHub Page #
+
+[Live App](https://ddoherty6.github.io/dinner-for-you/)
                     
