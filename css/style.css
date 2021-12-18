@@ -125,9 +125,15 @@ p {
 		font-size: boold 15px;
 		align-items: center;
 		text-align: center;
-		padding-top: 15px;
+		padding-top: 10px;
 	
   }
-  
+  #h1{
+
+	font-size: 60px;
+}
+body{
+	width: 95%;
 
   }
+}
