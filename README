@@ -30,11 +30,21 @@ Development shifted to the current MVP, Dinner For You. Using integrated Github 
 
 ## Future Development
 
-Additional features -
+### Additional Features
 
 - "Clear" or "Delete" functionality for recipe history buttons
 - Dynamically generate site headers "Meal", "Category", "Region", "Ingredients", "Measure", "Instructions" to clean up UI when app loads.
-- 
+- Parse instructions so that numbered steps have line breaks to make more readable
+
+### Next Direction
+
+The next direction for this concept is to integrate the functionality with an app that delivers the ingredients, e.g. Blue Apron. While such an app offers varied meal packages, incorporating fully randomized meal choice from accross the world would increase user interactivity and increase interest in the service.
+
+## Use
+
+App is fully live and ready to use. User interacts with app starting with the Get Recipie button, which pulls a random recipe from the database. Then user can select from past recipies using those dynamically generated buttons, view an instructional YouTube video, or email the recipe to their desired email address. 
+
+Our only issue with the MVP's functionality has been the email API, which went down for a few days (2021-Dec-15 through 2021-Dec-17), and as of this writing is back up. This may be due to call limit on the API, but given that any reference to the API was removed from RapidAPI for those days, team assumes lapse in functionality was due to an API update and functionality should resume as normal indefinitely.
 
 
 # Screen Capture of the Working App
