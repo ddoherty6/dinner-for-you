@@ -8,10 +8,10 @@ This app also allows the user to email themselves a copy of the recipe and all r
 
 
 ## Contributors
-Dan Doherty - github profile link
-Sadi Abdurraouf - github profile link
-Curtis Hong - Github profile link
-Eiko Ujifusa - Github profile Link
+- [Dan Doherty](https://github.com/ddoherty6)
+- [Sadi Abdurraouf](https://github.com/asadi80)
+- [Curtis Hong](https://github.com/NonchalantGarage)
+- [Eiko Ujifusa](https://github.com/eikouji)
 
 ## Technologies Used
 
@@ -20,7 +20,7 @@ Eiko Ujifusa - Github profile Link
 - jQuery
 - Materialize
 - The Meal DB API
-- EasyMail
+- EasyMail via Radid API
 
 ## Development
 
@@ -45,6 +45,8 @@ The next direction for this concept is to integrate the functionality with an ap
 App is fully live and ready to use. User interacts with app starting with the Get Recipie button, which pulls a random recipe from the database. Then user can select from past recipies using those dynamically generated buttons, view an instructional YouTube video, or email the recipe to their desired email address. 
 
 Our only issue with the MVP's functionality has been the email API, which went down for a few days (2021-Dec-15 through 2021-Dec-17), and as of this writing is back up. This may be due to call limit on the API, but given that any reference to the API was removed from RapidAPI for those days, team assumes lapse in functionality was due to an API update and functionality should resume as normal indefinitely.
+
+Edit: EasyMail API issue was due to call limit at 50 a month. We have created a new key for grader.
 
 
 # Screen Capture of the Working App
