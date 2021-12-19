@@ -53,6 +53,10 @@ Edit: EasyMail API issue was due to call limit at 50 a month. We have created a 
 
 ![Screenshot (16)](https://user-images.githubusercontent.com/89751266/146664325-27e406be-2110-4bce-bcfd-c20662d5e80d.png)
 
+# Demo
+
+https://user-images.githubusercontent.com/89751266/146694320-0ee3f516-940e-43db-8c2a-06207ebec5b1.mov
+
 
 
 # Link to the GitHub Page #
