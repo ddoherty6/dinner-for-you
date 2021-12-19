@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Righteous&display=swap');
+.navbar {
+	height: 80px;
+	
+}
+#h1{
+	font-family: 'Island Moments', cursive;
+	font-size: 76px;
+}
+
+h4{
+	opacity: 80%;
+}
+h3{
+	font-family: 'Righteous', cursive;}
+body{
+	width: 85%;
+	font-family:  'PT Sans', sans-serif;
+	margin: 0 auto;
+	background-image: url("./image/im.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+nav{
+	opacity: 0.60;
+	
+}
+#btn{
+	margin-top: 10px;
+	width: 108px;
+}
+.container{
+	margin-top: 10px;
+}
+ul, li{
+	list-style: none;
+	font-size: 20px;
+}
+
+#image{
+	width: 300px;
+	border-radius: 20px;
+	margin-top: 10px;
+	float: left;
+}
+#oldRecipeMeal{
+	margin-top: 10px;
+	height: 70px;
+	width: 500px;
+	/* background-color: #7986cb; */
+	background-image: url("./image/logo(1).png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+	font-size: boold 15px;
+	align-items: center;
+	text-align: center;
+	padding-top: 15px;
+
+
+}
+
+.navbar-brand {
+	font-size: 40px;
+}
+#header{
+	width: 250px;
+}
+
+p {
+	text-align: justify;
+	font-size: 20px;
+}
+
+.btn{
+	background-color: #9ccc65;
+	width: 100px;
+	margin-top: 5px;
+  }
+
+.email-sent {
+	color: green;
+}
+
+.email-fail {
+	color: red;
+}
+  img{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 360px;
+  }
+  #ing,#ins{
+	  width: 300px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=PT+Sans&display=swap');
+  @media only screen and (max-width: 1600px){
+	  #image{
+		  margin-top: 10px;
+		  float: none;
+	  }
+	  h3, h4{
+		  text-align: center;
+	  }
+	  .btn {
+		margin-top: 5px;
+	}
+	#media{
+		font-size: 35px;
+	}
+	.row .col {
+		padding: 0px;
+	}
+	#in,#me {
+		
+		padding-left: 15px;
+	}
+	img{
+		
+		width: 322px;
+		margin-top: 10px;
+	  }
+	  #oldRecipeMeal{
+		margin-top: 10px;
+		height: 50px;
+		width: 348px;
+		/* background-color: #7986cb; */
+		background-image: url("./image/logo(1).png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		color: black;
+		font-size: boold 15px;
+		align-items: center;
+		text-align: center;
+		padding-top: 10px;
+	
+  }
+  #h1{
+
+	font-size: 60px;
+}
+body{
+	width: 95%;
+
+  }
+}
