@@ -114,7 +114,7 @@ function oldRecipeFun(recipeName){
 	.appendTo("#ytube");
 	// modal button
 	$("#email-me").empty();
-	$('<a href="#modal1" class="btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email Me this Recipe!</a>')
+	$('<a href="#modal1" class="btn modal-trigger" data-mdb-ripple-color="#be8989" id="email-me">Email</a>')
 	.appendTo("#email-me");
 	
 

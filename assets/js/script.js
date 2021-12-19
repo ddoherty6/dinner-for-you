@@ -28,7 +28,7 @@ var sendMail = function(userName, userEmail) { // using EasyMail API
     "headers": {
         "content-type": "application/json",
         "x-rapidapi-host": "easymail.p.rapidapi.com",
-        "x-rapidapi-key": "79bc5e5863msh3ef58438b7034ddp1e35ddjsn2401862fc36a"
+        "x-rapidapi-key": "61f7e1e89amsh916d43089bd98bep10b853jsn09283b1f8040"
     },
     "processData": false,
     "data": form
