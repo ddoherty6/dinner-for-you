@@ -49,7 +49,8 @@ Our only issue with the MVP's functionality has been the email API, which went d
 
 # Screen Capture of the Working App
 
-![screenshot](./assets/images/screenshot.jpg)
+![Screenshot (16)](https://user-images.githubusercontent.com/89751266/146664325-27e406be-2110-4bce-bcfd-c20662d5e80d.png)
+
 
 
 # Link to the GitHub Page #
